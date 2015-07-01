@@ -19,7 +19,8 @@ var RealBit = can.Model.extend({
 }, {});
 
 
-var template = can.stache('<bh-bits-carousel bit-tag="bh-bit-carousel" bit-model="{bitModel}"></bh-bits-carousel>');
+import template from "./carousel.stache!";
+import "./carousel.less!";
 
 var State = can.Map.extend({
 	isAdmin(){
