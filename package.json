@@ -1,0 +1,26 @@
+{
+  "name": "wowbao",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bitovi/wowbao.git"
+  },
+  "author": "",
+  "license": "-",
+  "bugs": {
+    "url": "https://github.com/bitovi/wowbao/issues"
+  },
+  "homepage": "https://github.com/bitovi/wowbao",
+  "dependencies": {
+    "steal-tools": "^0.11.0-pre.1",
+    "jquery": "^2.1.4",
+    "canjs": "^2.2.0",
+    "steal": "^0.10.5",
+    "can": "^2.3.0-pre.2"
+  }
+}
