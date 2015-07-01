@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<head>
+  <base href="" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Asian Buns, Casual Lunch in Water Tower, Casual Restaurant chicago, restaurant menus, Healthy Asian, Healthy Lunch in Theater District, Healthy Lunch in Water Tower, Healthy Quick Service Restaurants, quick breakfast chicago, healthy breakfast chicago, lettuce entertain you menu, lettuce entertain you menus, Quick Healthy Lunch Downtown, Quick Lunch, Quick Lunch Downtown, Quick Lunch in Theater District, Quick Restaurants in the Loop, Water Tower Restuarants, wow bao, wow bao menu, wow bowwowbao, bow wow" />
+  <meta name="title" content="menu" />
+  <meta name="description" content="The Wow Bao menu offers authentic Asian cuisine with a modern twist. From bao to pot stickers to rice bowls, and homemade ginger ale, there are plenty of surprisingly nutritious and delicious options on the Wow Bao menu." />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Wow Bao - menu</title>
+  <link href="http://wowbao.com/templates/default/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <script type="text/javascript" src="http://wowbao.com/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="http://wowbao.com/media/system/js/caption.js"></script>
+
+<link rel="stylesheet" href="http://wowbao.com/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/system/css/general.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/default/css/template.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/default/css/calendar.css" type="text/css" />
+<!--[if lte IE 6]>
+<link href="/templates/default/css/ieonly.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://www.wowbao.com/iframe/js/jquerycycle.js"></script>
+<script type="text/javascript" src="http://www.wowbao.com/iframe/js/jqueryeasing.js"></script>
+<script src="http://www.wowbao.com/iframe/js/jquery.tweet.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.leye.com/fishbowl/2/jquery.fishbowl.js"></script>
+<link rel="stylesheet" href="http://www.wowbao.com/iframe/tweet.css" type="text/css" />
+
+<script>
+$(document).ready(function() {
+	var url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=baomouth&count=20&callback=?";
+	$('.twitter_feed').html(''); //so important to include
+	
+	$.getJSON(url, function(data){
+		$.each(data, function(index, item){
+                   var hashInfo = item.entities.hashtags;
+                   var propName = '0'; /* having "0" represents the presence of hashtag info*/
+                   for(var propName in hashInfo) {
+                      if(hashInfo.hasOwnProperty(propName)) {
+                         if(hashInfo[propName].text=="BunsOnTheRun"){
+                            $('.twitter_feed').append('<div class="tweet"><p>' + item.text.linkify() + '</p><p><strong>' + relative_time(item.created_at) + '</strong></p></div>');  
+                         }
+                      }
+                   }
+	    });
+	});
+	
+	function relative_time(time_value) {
+	  var values = time_value.split(" ");
+	  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+	  var parsed_date = Date.parse(time_value);
+	  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+	  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+	  delta = delta + (relative_to.getTimezoneOffset() * 60);
+	  
+	  var r = '';
+	  if (delta < 60) {
+		r = 'a minute ago';
+	  } else if(delta < 120) {
+		r = 'couple of minutes ago';
+	  } else if(delta < (45*60)) {
+		r = (parseInt(delta / 60)).toString() + ' minutes ago';
+	  } else if(delta < (90*60)) {
+		r = 'an hour ago';
+	  } else if(delta < (24*60*60)) {
+		r = '' + (parseInt(delta / 3600)).toString() + ' hours ago';
+	  } else if(delta < (48*60*60)) {
+		r = '1 day ago';
+	  } else {
+		r = (parseInt(delta / 86400)).toString() + ' days ago';
+	  }
+	  
+	  return r;
+	}
+	
+	String.prototype.linkify = function() {
+		return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&\?\/.=]+/, function(m) {
+			return m.link(m);
+		});
+	};	
+});
+
+
+
+$(document).ready(function() {
+      $(document.body).fishbowl({
+
+            mainbgpath: 'http://www.leye.com/fishbowl/images/bg-fishbowl01.png', //main bg -> 1px x 1px transparent png
+            formbgcss: '#e3dbd2;', //css rule for form background - no punctuation (":" & ";") required
+            labelcolor: '#4b3f0c', //color for feild labels
+            inputbgcss: '#ffffff', //css rule for input field background
+            inputcolor: '#4b3f0c', //off focus txt color
+            inputbgonfocus: '#ffffff', //input onfocus bg
+            inputcoloronfocus: '#000000', //input onfocus color
+            inputbgonfail: '#ff0000', //input onfail bg
+            inputcoloronfail: '#ffffff', //input onfail color
+            submitbg: '#4b3f0c', // submit bg color
+            submitcolor: '#ffffff', //submit txt color
+            submitbgonfocus: '#c41811', //submit onhover bg color
+            submitcoloronfocus: '#ffffff', //submit onhover txt color
+		    btncloseimg: 'http://www.leye.com/fishbowl/images/btn_close01.png', //a sprite -> 17px x 17px
+			
+			
+			SiteGUID: '7cf8befb-9c93-433b-9dda-f59d3cbc0e5f', //DO NOT CHANGE (unless your name is Luke or Joe)
+			ListID: '45097156690', //DO NOT CHANGE (unless your name is Luke or Joe)
+			StoreCode: '101', //DO NOT CHANGE (unless your name is Luke or Joe)
+			posturl: 'http://wowbao.fbmta.com/members/subscribe.aspx', //DO NOT CHANGE (unless your name is Luke or Joe)
+			
+			
+			multilocation: true,  //Set To "true" for multi-location concepts
+			locationoptions: '<li id="101">Jackson St.</li><li id="148">835 N Michigan Ave</li><li id="157">175 W Jackson</li><li id="178">225 N Michigan Ave</li>'  //list out location with ids ecaul to corrosponding store codes
+			 
+
+      });
+	  
+	  $('a[href=#fishbowl]').click(function() {
+			$('#fishbowl') .trigger('click');
+	  });
+});
+
+
+
+
+$(window).load(function() {
+	// Twitter Slider
+	$(function() {
+		$('.twitter_feed').cycle({
+			fx:     'scrollVert',
+			speed: 300,
+			delay:  500,
+			timeout: 8000
+		});
+	});
+});
+	
+</script>
+
+</head>
+<body>
+<a name="up" id="up"></a>
+
+<script src="js/SpryTabbedPanels.js" type="text/javascript"></script>
+
+<!-- start wowbao -->
+<div id="wowbao" class="wowbao ">
+
+<!-- start frame -->
+<div id="frame">
+<div id="frameTop">
+<div id="frameBottom">
+
+<!-- start header -->
+<div id="header">
+<a href="index.html"><img id="logo"  src="http://wowbao.com/images/wowbao/logo.gif" alt="logo" /></a>
+<ul class="menu"><li class="item1"><a href="index.html"><span>Home</span></a></li><li id="current" class="active item2"><a href="menu.html"><span>Menu</span></a></li><li class="item6"><a href="locations.html"><span>Locations</span></a></li><li class="item38"><a href="press.html"><span>Press</span></a></li><li class="item5"><a href="catering.html"><span>Catering</span></a></li><li class="item40"><a href="http://www.snapfinger.com/menus/WOWBAOSHIPPING/default.aspx?SiteID=17761"><span>ship</span></a></li><li class="item4"><a href="ordering.html"><span>Online Ordering</span></a></li></ul><script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript"><!--
+var flashvars = {};
+var params = { wmode: "transparent" };
+var attributes = {};
+swfobject.embedSWF("swf/steam.swf", "steam", "950", "87", "9.0.0", "swf/expressInstall.swf", flashvars, params, attributes);
+// --></script>
+<div id="steam"></div>
+</div>
+<!-- end header -->
+
+<!-- start body -->
+<div id="body">
+<div id="bodyTop">
+<div id="bodyBottom">
+
+<div id="title">
+<p><img height="340" alt="menu" src="http://wowbao.com/images/wowbao/titles/menu.gif" width="60" /></p>
+</div>
+
+<div id="content">
+
+<table class="contentpaneopen">
+
+
+
+<tr>
+<td valign="top">
+<div style="height: 0px; float: left;"><a href="nutritional-information.html" title="Nutritional Information" style="width: 180px; height: 18px; margin: 10px 0px 0px 362px; padding: 3px 0px; background: none repeat scroll 0% 0% #c41811; color: #ffffff; border-radius: 7px 7px 7px 7px; position: absolute; z-index: 999; font-size: 12px; font-weight: bold; line-height: 18px; text-align: center; cursor: pointer; text-decoration: none;">*Nutritional Information</a></div>
+<div id="TabbedPanels1" class="TabbedPanels">
+<ul class="TabbedPanelsTabGroup">
+<li class="TabbedPanelsTab"><a class="mainTab">lunch/dinner</a></li>
+<li class="TabbedPanelsTab"><a class="breakfastTab">breakfast</a></li>
+<li class="TabbedPanelsInfo">pricing and menus may vary by location<br />please download individual menus below</li>
+</ul>
+<div class="TabbedPanelsContentGroup">
+<div class="TabbedPanelsContent">
+<div style="margin-bottom:6px;">
+<div>
+<div>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td valign="top" width="190"><img src="http://wowbao.com/images/wowbao/menu/main/bao.jpg" alt="Bao" /> <img src="http://wowbao.com/images/wowbao/menu/main/bao.gif" alt="Bao" /> teriyaki chicken<br />spicy kung pao chicken<br />whole wheat vegetable<br />thai curry chicken<br />spicy mongolian beef<br />bbq pork<br /><br /><span style="text-decoration: underline;">sweet bao:</span><br />coconut custard<br />chocolate<br /><br />each.......................1.89<br />six pack .................10.99</td>
+<td valign="top" width="11"><img src="http://wowbao.com/images/wowbao/menu/windowLine.png" /></td>
+<td valign="top" width="190"><img src="http://wowbao.com/images/wowbao/menu/main/potstickers.jpg" alt="Potstickers" /> <img src="http://wowbao.com/images/wowbao/menu/main/potstickers.gif" alt="Potstickers" /> or steamed dumplings<br /><br />all natural chicken<br />green vegetable<br />pork and cabbage<br /><br /><span><span style="text-decoration: underline;">pick a sauce:</span><br />sesame-mustard<br />or soy-ginger </span><br /><br />five piece..................4.69<br />eight piece................7.49</td>
+<td valign="top" width="11"><img src="http://wowbao.com/images/wowbao/menu/windowLine.png" /></td>
+<td valign="top" width="190">
+<p><img src="http://wowbao.com/images/wowbao/menu/main/bowls.jpg" alt="Bowls" /> <img src="http://wowbao.com/images/wowbao/menu/main/bowls.gif" alt="Bowls" /> <br /><span style="text-decoration: underline;">choice of:</span><br />teriyaki chicken<br />thai curry chicken<br />spicy kung pao chicken<br />spicy mongolian beef<br />all vegetable<br /><br />with: jasmine white rice,<br />multi-grain rice (add 75¢), lettuce cups, quinoa (add 75¢), lo mein noodles, chow fun noodles</p>
+<p><br />each......................6.49<br /><br />add...2 bao or 3 potstickers - $3.19</p>
+</td>
+<td valign="top" width="11"><img src="http://wowbao.com/images/wowbao/menu/windowLine.png" /></td>
+<td valign="top" width="190"><img src="http://wowbao.com/images/wowbao/menu/main/combos.gif" alt="Combos" /><br />
+<h2 style="text-align:center;">2 Bao or<br />5 Potstickers</h2>
+<p><span style="text-decoration: underline;">with either:</span><br />• cool pad thai salad<br />• asian vegetable salad<br />• spicy peanut noodles<br /><br />combo..........................6.49<br /><br /><img src="http://wowbao.com/images/wowbao/menu/main/soups.gif" alt="Soups" /><br />thai herb broth.............2.69<br />dumpling noodle...........4.39<br />thai chicken noodle.......4.19<br /><br /><img src="http://wowbao.com/images/wowbao/menu/main/drinks.gif" alt="Drinks" /><br />hibiscus iced tea...........1.99<br />thai iced coffee.............2.99<br />fountain soda...............1.99<br />lemonade....................2.19</p>
+<p> </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div>
+<table style="height: 250px;" border="0" cellpadding="0" cellspacing="0" width="812">
+<tbody>
+<tr>
+<td valign="top" width="190"><img src="http://wowbao.com/images/wowbao/menu/main/salads.gif" alt="Salads" /><br /><br /><img alt="salad-image-header" src="http://wowbao.com/images/wowbao/menu/main/salad-image-header.jpg" height="103" width="190" /><br />asian vegetables w/ chicken<br />cool pad thai salad w/ chicken<br /><br />each............................5.99<br /><br /></td>
+<td width="11"></td>
+<td valign="top" width="190">
+<p> </p>
+<p> </p>
+<p> </p>
+<p>spicy peanut noodles w/<br />chicken.......................5.39</p>
+<p>chicken summer roll<br />each............................5.49</p>
+<p>vegetable summer roll<br />each............................5.39</p>
+<p> </p>
+</td>
+<td valign="top" width="11"><img src="http://wowbao.com/images/wowbao/menu/windowLine.png" height="240" /></td>
+<td valign="top" width="391"><img src="http://wowbao.com/images/wowbao/menu/main/homemadeGingerAle.gif" alt="Homemade Ginger Ale" /><br /> 
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td valign="top"><img src="http://wowbao.com/images/wowbao/menu/main/gingerale.jpg" style="margin-right:12px;" /></td>
+<td valign="top">our signature drink made with<br />fresh ginger<br /><br />original.................................2.69<br />pomegranate........................2.69<br /><br /></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!--           
+<tr>
+<td valign="top">
+<p style="text-align: center;" mce_style="text-align: center;"><br /><img alt="lo-cal-combos" height="64" width="190" src="/images/wowbao/menu/lo-cal-combos.jpg" mce_src="/images/wowbao/menu/lo-cal-combos.jpg" /><br />6.99 Each</p>
+<p style="text-align: center;" mce_style="text-align: center;"> </p>
+<p><span style="font-size: 12pt;" mce_style="font-size: 12pt;"><strong>Under 300<br />Calories</strong></span></p>
+<p><span style="text-decoration: underline;" mce_style="text-decoration: underline;"><span style="font-size: 10pt;" mce_style="font-size: 10pt;">205 cal combo</span></span></p>
+<p>thai herb broth<br />asian vegetable side salad<br />3 piece chicken dumplings</p>
+<p><span style="text-decoration: underline;" mce_style="text-decoration: underline;"><span style="font-size: 10pt;" mce_style="font-size: 10pt;">220 cal combo</span></span></p>
+<p>thai herb broth<br />edamame bao<br />asian vegetable side salad</p>
+<p> </p>
+</td>
+<td><br mce_bogus="1" /></td>
+<td valign="top">
+<p> </p>
+<p> </p>
+<p><span style="font-size: 12pt;" mce_style="font-size: 12pt;"><strong>Under 400<br />Calories</strong></span></p>
+<p><span style="text-decoration: underline;" mce_style="text-decoration: underline;"><span style="font-size: 10pt;" mce_style="font-size: 10pt;">330 cal combo</span></span></p>
+<p>thai herb broth<br />chicken summer rolls</p>
+<p><br /><span style="font-size: 10pt;" mce_style="font-size: 10pt;"><span style="text-decoration: underline;" mce_style="text-decoration: underline;">399 cal combo</span></span></p>
+<p><br />thai curry chicken with <br />lettuce cups</p>
+<p>choose 1 meat bao or<br /> vegetable bao<br />(360 calorie combo with <br />vegetable bao)</p>
+<p> </p>
+</td>
+<td><img height="240" src="/images/wowbao/menu/windowLine.png" mce_src="/images/wowbao/menu/windowLine.png" /></td>
+<td valign="top">
+<table width="391" style="height: 303px;">
+<tbody>
+<tr>
+<td valign="top">
+<p> </p>
+<p> </p>
+<p><span style="font-size: 12pt;" mce_style="font-size: 12pt;"><strong>Under <br />500 Calories</strong></span></p>
+<p><span style="text-decoration: underline;" mce_style="text-decoration: underline;"><span style="font-size: 10pt;" mce_style="font-size: 10pt;">410 cal combo</span></span></p>
+<p>kung pao bowl with quinoa<br />asian vegetable side salad</p>
+<p><span style="font-size: 10pt;" mce_style="font-size: 10pt;"><span style="text-decoration: underline;" mce_style="text-decoration: underline;">470 cal combo</span></span></p>
+<p>teriyaki chicken bowl<br />with lo mein noodles<br />thai herb broth</p>
+<p> </p>
+</td>
+<td valign="top">
+<p> </p>
+<p> </p>
+<p><img alt="combo-image" height="165" width="190" src="/images/wowbao/menu/combo-image.jpg" mce_src="/images/wowbao/menu/combo-image.jpg" /></p>
+</td>
+</tr>
+-->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<br />
+<h2 style="text-align:right;">DOWNLOAD PRINTABLE MENUS</h2>
+<p style="text-align: right; "><a target="_blank" href="pdf/JacksonMenu.pdf" class="wowbao"><img src="http://wowbao.com/images/wowbao/assets/circle.gif" style="position: relative; top: 8px;" /></a><a href="http://wowbao.com/images/wowbao/menu/wowbaomenu.pdf"> <strong>Chicago Loop</strong> (w. jackson blvd)</a> <img src="http://wowbao.com/images/wowbao/assets/circle.gif" /><a href="http://wowbao.com/images/wowbao/menu/wowbaomenu.pdf"> <strong>Theater District</strong> (state &amp; lake)</a><a href="http://wowbao.com/images/wowbao/menu/main/pdf/mainmenu.pdf"><br /></a> <a target="_blank" href="http://wowbao.com/images/wowbao/menu/main/pdf/watertowerplace.pdf"><img src="http://wowbao.com/images/wowbao/assets/circle.gif" style="position: relative; top: 8px;" /></a><a href="http://wowbao.com/images/wowbao/menu/watertowerplacemenu.pdf"> <strong>Watertower Place</strong> (michigan ave)</a> <img alt="circle" src="http://wowbao.com/images/wowbao/assets/circle.gif" height="22" width="22" /> <a href="http://wowbao.com/images/wowbao/menu/michiganplazamenu.pdf"><strong>Michigan Ave </strong>(michigan &amp; lake)</a></p>
+</div>
+<div class="TabbedPanelsContent">
+<div>
+<div>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td valign="top" width="250"><img src="http://wowbao.com/images/wowbao/menu/breakfast/breakfastBao.jpg" /><br /><img src="http://wowbao.com/images/wowbao/menu/breakfast/breakfastBao.gif" /><br />egg, bacon &amp; cheddar<br />egg, spinach &amp; mushroom<br />egg &amp; spicy sausage<br />bbq pork<br />coconut custard<br /><br />6 pack....10.99 each....1.89<br /><br /><img alt="breakfast-combos 1" height="110" width="190" src="http://wowbao.com/images/wowbao/menu/breakfast-combos&#32;1.jpg" /></td>
+<td valign="top" width="11"><img src="http://wowbao.com/images/wowbao/menu/windowLine.png" /></td>
+<td valign="top" width="250">
+<p><br /> <img src="http://wowbao.com/images/wowbao/menu/breakfast/high-energyOatmeal.gif" /><br /><br />steamed with goji berries, quinoa,<br />brown sugar, cranberries,<br />&amp; chinese red dates</p>
+<p><br />each............................ 3.99</p>
+<p> </p>
+<p> </p>
+<p><span style="font-size: 18pt;">Breakfast Bowls</span></p>
+<p>choice of:</p>
+<p>egg, bacon &amp; cheddar<br />egg &amp; spicy sausage</p>
+<p>with: jasmine rice or quinoa (add .75¢)</p>
+<p>each.......4.39</p>
+</td>
+<td valign="top" width="11"><img src="http://wowbao.com/images/wowbao/menu/windowLine.png" /></td>
+<td valign="top" width="250">
+<p><br /><img alt="coffee" src="http://wowbao.com/images/wowbao/menu/breakfast/coffee.jpg" height="103" width="190" /><br /><img alt="coffee" src="http://wowbao.com/images/wowbao/menu/breakfast/coffee.gif" height="32" width="190" /><br /><br />Intelligentsia<br />coffee.........lg 1.69...rg 1.19</p>
+<p> </p>
+<p><img src="http://wowbao.com/images/wowbao/menu/breakfast/morningFavorites.gif" /></p>
+<p>imperial hot teas.............1.69<br />hot ginger tea.................2.69<br />thai herb broth................2.69<br />fresh -squeezed juice.......1.69<br />non-fat yogurt................1.69</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div style="text-align: -webkit-right;">**Watertower Place is now open for Breakfast</div>
+</div>
+</div>
+<br />
+<h2 style="text-align:right;"></h2>
+</div>
+</div>
+</div></td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+
+</div>
+
+<script type="text/javascript">
+<!--
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
+//-->
+</script>
+
+<!-- <div class="clr"></div> -->
+</div>
+</div>
+</div>
+<!-- end body -->
+
+</div>
+</div>
+</div>
+<!-- end frame -->
+
+<!-- start footer -->
+<div id="footer">
+<table width="100%" border="0" cellpadding="0" cellspacing="1"><tr><td nowrap="nowrap"><a href="index.html" class="mainlevelmenu" >home</a><span class="mainlevelmenu"> | </span><a href="get-your-wow-now.html" class="mainlevelmenu" >get your wow now</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/gift-cards" target="_blank" class="mainlevelmenu" >gift cards</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/employment" target="_blank" class="mainlevelmenu" >employment</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/" target="_blank" class="mainlevelmenu" >lettuce entertain you</a><span class="mainlevelmenu"> | </span><a href="http://www.wowbao.com/images/wowbao/menu/main/pdf/wowbaomenuprintable.pdf" target="_blank" class="mainlevelmenu" >printable menus</a><span class="mainlevelmenu"> | </span><a href="http://www.wowbao.com/images/wowbao/catering/cateringmenu.pdf" target="_blank" class="mainlevelmenu" >catering menus</a><span class="mainlevelmenu"> | </span><a href="franchising.html" class="mainlevelmenu" >franchising</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/contact" target="_blank" class="mainlevelmenu" >contact us</a><span class="mainlevelmenu"> | </span><a href="menu.html#fishbowl" class="mainlevelmenu" >Join Our Email List</a></td></tr></table><div id="copyright">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="85%">
+<tbody>
+<tr>
+<td align="center" valign="middle"><a target="_blank" href="http://www.facebook.com/hotasianbuns"><img id="facebook" src="http://wowbao.com/images/wowbao/assets/facebook.png" alt="follow wow bao on facebook" /></a> <a target="_blank" href="http://twitter.com/baomouth"><img id="twitter" src="http://wowbao.com/images/wowbao/assets/twitter.png" alt="follow wow bao on twitter" /></a> <a target="_blank" href="http://instagram.com/wowbao"><img id="instagram" src="http://wowbao.com/images/wowbao/assets/instagram.png" alt="follow wow bao on instagram" /></a> <a target="_blank" href="http://youtube.com/wowbaovideo"><img id="youtube" src="http://wowbao.com/images/wowbao/assets/youtube.png" alt="follow wow bao on youtube" /></a></td>
+<td>Wow Bao all rights reserved • Copyright © 2013.  • • • • • •  <a target="_blank" href="http://www.envisionitmedia.com/services/interactive.html" title="website design">website design</a> by <a href="http://www.envisionitmedia.com/social-media" target="_blank"><img id="eim" class="png" src="http://wowbao.com/images/wowbao/assets/pixel.gif" alt="envisionit media" /></a> <a target="_blank" href="http://www.envisionitmedia.com" title="envisionit media">envisionit media</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- end footer -->
+
+</div>
+<!-- end wowbao -->
+
+<!-- start google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6126011-1");
+pageTracker._trackPageview();
+</script>
+<!-- end google analytics -->
+
+<div id="fishbowl"></div>
+<div id="fish_cont"></div>
+</body>
+</html>

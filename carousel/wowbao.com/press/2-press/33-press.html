@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<head>
+  <base href="" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Wow Bao" />
+  <meta name="title" content="2011 MOST INFLUENTIAL RESTAURANTS IN THE U.S." />
+  <meta name="meta_robots" content="index, follow" />
+  <meta name="description" content="Wow Bao" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Wow Bao - 2011 MOST INFLUENTIAL RESTAURANTS IN THE U.S.</title>
+  <link href="http://wowbao.com/templates/default/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <script type="text/javascript" src="http://wowbao.com/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="http://wowbao.com/media/system/js/caption.js"></script>
+
+<link rel="stylesheet" href="http://wowbao.com/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/system/css/general.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/default/css/template.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/default/css/calendar.css" type="text/css" />
+<!--[if lte IE 6]>
+<link href="/templates/default/css/ieonly.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://www.wowbao.com/iframe/js/jquerycycle.js"></script>
+<script type="text/javascript" src="http://www.wowbao.com/iframe/js/jqueryeasing.js"></script>
+<script src="http://www.wowbao.com/iframe/js/jquery.tweet.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.leye.com/fishbowl/2/jquery.fishbowl.js"></script>
+<link rel="stylesheet" href="http://www.wowbao.com/iframe/tweet.css" type="text/css" />
+
+<script>
+$(document).ready(function() {
+	var url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=baomouth&count=20&callback=?";
+	$('.twitter_feed').html(''); //so important to include
+	
+	$.getJSON(url, function(data){
+		$.each(data, function(index, item){
+                   var hashInfo = item.entities.hashtags;
+                   var propName = '0'; /* having "0" represents the presence of hashtag info*/
+                   for(var propName in hashInfo) {
+                      if(hashInfo.hasOwnProperty(propName)) {
+                         if(hashInfo[propName].text=="BunsOnTheRun"){
+                            $('.twitter_feed').append('<div class="tweet"><p>' + item.text.linkify() + '</p><p><strong>' + relative_time(item.created_at) + '</strong></p></div>');  
+                         }
+                      }
+                   }
+	    });
+	});
+	
+	function relative_time(time_value) {
+	  var values = time_value.split(" ");
+	  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+	  var parsed_date = Date.parse(time_value);
+	  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+	  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+	  delta = delta + (relative_to.getTimezoneOffset() * 60);
+	  
+	  var r = '';
+	  if (delta < 60) {
+		r = 'a minute ago';
+	  } else if(delta < 120) {
+		r = 'couple of minutes ago';
+	  } else if(delta < (45*60)) {
+		r = (parseInt(delta / 60)).toString() + ' minutes ago';
+	  } else if(delta < (90*60)) {
+		r = 'an hour ago';
+	  } else if(delta < (24*60*60)) {
+		r = '' + (parseInt(delta / 3600)).toString() + ' hours ago';
+	  } else if(delta < (48*60*60)) {
+		r = '1 day ago';
+	  } else {
+		r = (parseInt(delta / 86400)).toString() + ' days ago';
+	  }
+	  
+	  return r;
+	}
+	
+	String.prototype.linkify = function() {
+		return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&\?\/.=]+/, function(m) {
+			return m.link(m);
+		});
+	};	
+});
+
+
+
+$(document).ready(function() {
+      $(document.body).fishbowl({
+
+            mainbgpath: 'http://www.leye.com/fishbowl/images/bg-fishbowl01.png', //main bg -> 1px x 1px transparent png
+            formbgcss: '#e3dbd2;', //css rule for form background - no punctuation (":" & ";") required
+            labelcolor: '#4b3f0c', //color for feild labels
+            inputbgcss: '#ffffff', //css rule for input field background
+            inputcolor: '#4b3f0c', //off focus txt color
+            inputbgonfocus: '#ffffff', //input onfocus bg
+            inputcoloronfocus: '#000000', //input onfocus color
+            inputbgonfail: '#ff0000', //input onfail bg
+            inputcoloronfail: '#ffffff', //input onfail color
+            submitbg: '#4b3f0c', // submit bg color
+            submitcolor: '#ffffff', //submit txt color
+            submitbgonfocus: '#c41811', //submit onhover bg color
+            submitcoloronfocus: '#ffffff', //submit onhover txt color
+		    btncloseimg: 'http://www.leye.com/fishbowl/images/btn_close01.png', //a sprite -> 17px x 17px
+			
+			
+			SiteGUID: '7cf8befb-9c93-433b-9dda-f59d3cbc0e5f', //DO NOT CHANGE (unless your name is Luke or Joe)
+			ListID: '45097156690', //DO NOT CHANGE (unless your name is Luke or Joe)
+			StoreCode: '101', //DO NOT CHANGE (unless your name is Luke or Joe)
+			posturl: 'http://wowbao.fbmta.com/members/subscribe.aspx', //DO NOT CHANGE (unless your name is Luke or Joe)
+			
+			
+			multilocation: true,  //Set To "true" for multi-location concepts
+			locationoptions: '<li id="101">Jackson St.</li><li id="148">835 N Michigan Ave</li><li id="157">175 W Jackson</li><li id="178">225 N Michigan Ave</li>'  //list out location with ids ecaul to corrosponding store codes
+			 
+
+      });
+	  
+	  $('a[href=#fishbowl]').click(function() {
+			$('#fishbowl') .trigger('click');
+	  });
+});
+
+
+
+
+$(window).load(function() {
+	// Twitter Slider
+	$(function() {
+		$('.twitter_feed').cycle({
+			fx:     'scrollVert',
+			speed: 300,
+			delay:  500,
+			timeout: 8000
+		});
+	});
+});
+	
+</script>
+
+</head>
+<body>
+<a name="up" id="up"></a>
+
+
+
+<!-- start wowbao -->
+<div id="wowbao" class="wowbao press">
+
+<!-- start frame -->
+<div id="frame">
+<div id="frameTop">
+<div id="frameBottom">
+
+<!-- start header -->
+<div id="header">
+<a href="../../index.html"><img id="logo"  src="http://wowbao.com/images/wowbao/logo.gif" alt="logo" /></a>
+<ul class="menu"><li class="item1"><a href="../../index.html"><span>Home</span></a></li><li class="item2"><a href="../../menu.html"><span>Menu</span></a></li><li class="item6"><a href="../../locations.html"><span>Locations</span></a></li><li id="current" class="active item38"><a href="../../press.html"><span>Press</span></a></li><li class="item5"><a href="../../catering.html"><span>Catering</span></a></li><li class="item40"><a href="http://www.snapfinger.com/menus/WOWBAOSHIPPING/default.aspx?SiteID=17761"><span>ship</span></a></li><li class="item4"><a href="../../ordering.html"><span>Online Ordering</span></a></li></ul><script type="text/javascript" src="../../js/swfobject.js"></script>
+<script type="text/javascript"><!--
+var flashvars = {};
+var params = { wmode: "transparent" };
+var attributes = {};
+swfobject.embedSWF("swf/steam.swf", "steam", "950", "87", "9.0.0", "swf/expressInstall.swf", flashvars, params, attributes);
+// --></script>
+<div id="steam"></div>
+</div>
+<!-- end header -->
+
+<!-- start body -->
+<div id="body">
+<div id="bodyTop">
+<div id="bodyBottom">
+
+<div id="title">
+<p><img width="60" height="340" alt="press" src="http://wowbao.com/images/wowbao/titles/press.gif" /></p>
+</div>
+
+<div id="content">
+<table class="contentpaneopenpress">
+<tr>
+		<td class="contentheadingpress" width="100%">
+					2011 MOST INFLUENTIAL RESTAURANTS IN THE U.S.			</td>
+				
+		
+					</tr>
+</table>
+
+<table class="contentpaneopenpress">
+
+
+
+<tr>
+<td valign="top">
+<br /><br /> 
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="press-table">
+<tbody>
+<tr>
+<td width="100%" valign="top" align="left">
+<p class="press-pub-name">SocialCoco</p>
+</td>
+</tr>
+<tr>
+<td width="100%" valign="top" align="left">
+<p class="press-date">March 10, 2011</p>
+</td>
+</tr>
+<tr>
+<td width="100%" valign="top" align="left">
+<p class="press-copy">2011 MOST INFLUENTIAL RESTAURANTS IN THE U.S.</p>
+</td>
+</tr>
+<tr>
+<td width="100%" valign="top" align="right">
+<p class="press-link"><a href="http://socialcoco.squarespace.com/blog/2011/3/10/2011-most-influential-restaurants-in-the-us-infograph.html">Read More</a></p>
+</td>
+</tr>
+<tr>
+<td width="100%" valign="top" height="54" align="left"><img width="41" height="54" src="http://wowbao.com/images/wowbao/press/press-divider.gif" alt="press-divider" /></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+
+</div>
+
+
+
+<!-- <div class="clr"></div> -->
+</div>
+</div>
+</div>
+<!-- end body -->
+
+</div>
+</div>
+</div>
+<!-- end frame -->
+
+<!-- start footer -->
+<div id="footer">
+<table width="100%" border="0" cellpadding="0" cellspacing="1"><tr><td nowrap="nowrap"><a href="../../index.html" class="mainlevelmenu" >home</a><span class="mainlevelmenu"> | </span><a href="../../get-your-wow-now.html" class="mainlevelmenu" >get your wow now</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/gift-cards" target="_blank" class="mainlevelmenu" >gift cards</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/employment" target="_blank" class="mainlevelmenu" >employment</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/" target="_blank" class="mainlevelmenu" >lettuce entertain you</a><span class="mainlevelmenu"> | </span><a href="http://www.wowbao.com/images/wowbao/menu/main/pdf/wowbaomenuprintable.pdf" target="_blank" class="mainlevelmenu" >printable menus</a><span class="mainlevelmenu"> | </span><a href="http://www.wowbao.com/images/wowbao/catering/cateringmenu.pdf" target="_blank" class="mainlevelmenu" >catering menus</a><span class="mainlevelmenu"> | </span><a href="../../franchising.html" class="mainlevelmenu" >franchising</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/contact" target="_blank" class="mainlevelmenu" >contact us</a><span class="mainlevelmenu"> | </span><a href="33-press.html#fishbowl" class="mainlevelmenu" >Join Our Email List</a></td></tr></table><div id="copyright">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="85%">
+<tbody>
+<tr>
+<td align="center" valign="middle"><a target="_blank" href="http://www.facebook.com/hotasianbuns"><img id="facebook" src="http://wowbao.com/images/wowbao/assets/facebook.png" alt="follow wow bao on facebook" /></a> <a target="_blank" href="http://twitter.com/baomouth"><img id="twitter" src="http://wowbao.com/images/wowbao/assets/twitter.png" alt="follow wow bao on twitter" /></a> <a target="_blank" href="http://instagram.com/wowbao"><img id="instagram" src="http://wowbao.com/images/wowbao/assets/instagram.png" alt="follow wow bao on instagram" /></a> <a target="_blank" href="http://youtube.com/wowbaovideo"><img id="youtube" src="http://wowbao.com/images/wowbao/assets/youtube.png" alt="follow wow bao on youtube" /></a></td>
+<td>Wow Bao all rights reserved • Copyright © 2013.  • • • • • •  <a target="_blank" href="http://www.envisionitmedia.com/services/interactive.html" title="website design">website design</a> by <a href="http://www.envisionitmedia.com/social-media" target="_blank"><img id="eim" class="png" src="http://wowbao.com/images/wowbao/assets/pixel.gif" alt="envisionit media" /></a> <a target="_blank" href="http://www.envisionitmedia.com" title="envisionit media">envisionit media</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- end footer -->
+
+</div>
+<!-- end wowbao -->
+
+<!-- start google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6126011-1");
+pageTracker._trackPageview();
+</script>
+<!-- end google analytics -->
+
+<div id="fishbowl"></div>
+<div id="fish_cont"></div>
+</body>
+</html>

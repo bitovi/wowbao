@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<head>
+  <base href="" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Asian Buns, bao, Breakfast On-The-Go, Casual Lunch in Water Tower, Casual Restaurant, Healthy Asian, Healthy Lunch in Theater District, Healthy Lunch in Water Tower, Healthy Quick Service Restaurants, lettuce entertain you, lettuce entertain you chicago, lettuce entertain you restaurant, lettuce entertain you restaurants, leye, Quick Bites, Quick Healthy Lunch Downtown, Quick Lunch, Quick Lunch Downtown, Quick Lunch in Theater District, Quick Restaurants in the Loop, Water Tower Restuarants, wow bao, wow bow, wowbao, bow wow, hot asian buns" />
+  <meta name="title" content="home" />
+  <meta name="description" content="Wow Bao offers bao and other authentic Asian dishes with a modern flair. Bao are delicious, surprising, healthy, and fun - you won't be able to keep them a secret - although you might want to." />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Wow Bao - home</title>
+  <link href="http://wowbao.com/templates/home/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="http://wowbao.com/modules/mod_ahj/css/luck.css" type="text/css" />
+  <script type="text/javascript" src="http://wowbao.com/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="http://wowbao.com/media/system/js/caption.js"></script>
+  <script type="text/javascript" src="http://wowbao.com/modules/mod_ahj/js/luck.js"></script>
+
+<link rel="stylesheet" href="http://wowbao.com/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/system/css/general.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/home/css/template.css" type="text/css" />
+<!--[if lte IE 6]>
+<link href="/templates/home/css/ieonly.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://www.wowbao.com/iframe/js/jquerycycle.js"></script>
+<script type="text/javascript" src="http://www.wowbao.com/iframe/js/jqueryeasing.js"></script>
+<script type="text/javascript" src="http://www.leye.com/fishbowl/2/jquery.fishbowl.js"></script>
+<script src="http://www.wowbao.com/iframe/js/jquery.tweet.js" charset="utf-8"></script>
+<link rel="stylesheet" href="http://www.wowbao.com/iframe/tweet.css" type="text/css" />
+
+<script>
+$(document).ready(function() {
+	//Begin Twitter Feed
+	function randomString(length) {
+		var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
+		var str = '';
+		for (var i = 0; i < length; i++) {
+			str += chars[Math.floor(Math.random() * chars.length)];
+		}
+		return str;
+	}
+	var rnd = randomString(8);
+	$(".twitter_feed").tweet({
+		join_text: "auto",
+		query: "#BunsOnTheRun",
+		//avatar_size: 48,
+		count: 10,
+		refresh_interval: 10000,
+		loading_text: "loading tweets..."
+	});
+	//End Twitter Feed
+});
+
+
+$(document).ready(function() {
+      $(document.body).fishbowl({
+
+            mainbgpath: 'http://www.leye.com/fishbowl/images/bg-fishbowl01.png', //main bg -> 1px x 1px transparent png
+            formbgcss: '#e3dbd2;', //css rule for form background - no punctuation (":" & ";") required
+            labelcolor: '#4b3f0c', //color for feild labels
+            inputbgcss: '#ffffff', //css rule for input field background
+            inputcolor: '#4b3f0c', //off focus txt color
+            inputbgonfocus: '#ffffff', //input onfocus bg
+            inputcoloronfocus: '#000000', //input onfocus color
+            inputbgonfail: '#ff0000', //input onfail bg
+            inputcoloronfail: '#ffffff', //input onfail color
+            submitbg: '#4b3f0c', // submit bg color
+            submitcolor: '#ffffff', //submit txt color
+            submitbgonfocus: '#c41811', //submit onhover bg color
+            submitcoloronfocus: '#ffffff', //submit onhover txt color
+		    btncloseimg: 'http://www.leye.com/fishbowl/images/btn_close01.png', //a sprite -> 17px x 17px
+			
+			
+			SiteGUID: '7cf8befb-9c93-433b-9dda-f59d3cbc0e5f', //DO NOT CHANGE (unless your name is Luke or Joe)
+			ListID: '45097156690', //DO NOT CHANGE (unless your name is Luke or Joe)
+			StoreCode: '101', //DO NOT CHANGE (unless your name is Luke or Joe)
+			posturl: 'http://wowbao.fbmta.com/members/subscribe.aspx', //DO NOT CHANGE (unless your name is Luke or Joe)
+			
+			
+			multilocation: true,  //Set To "true" for multi-location concepts
+			locationoptions: '<li id="101">Jackson St.</li><li id="148">835 N Michigan Ave</li><li id="157">175 W Jackson</li><li id="178">225 N Michigan Ave</li>'  //list out location with ids ecaul to corrosponding store codes
+			 
+
+      });
+	  
+	  $('a[href=#fishbowl]').click(function() {
+			$('#fishbowl') .trigger('click');
+	  });
+});
+
+$(window).load(function() {
+	// Twitter Slider
+	$(function() {
+		$('#tweet_list').cycle({
+			fx:     'scrollVert',
+			speed: 300,
+			delay:  500,
+			timeout: 8000
+		});
+	});
+});
+	
+</script>
+
+
+
+</head>
+<body>
+<a name="up" id="up"></a>
+
+<script src="js/swfobject.js" type="text/javascript"></script>
+<script type="text/javascript"><!--
+var flashvars = {};
+var params = { wmode: "transparent" };
+var attributes = {};
+swfobject.embedSWF("swf/home-3.swf", "flash", "652", "357", "9.0.0", "swf/expressInstall.swf", flashvars, params, attributes);
+// --></script>
+
+<!-- start wowbao -->
+<div id="wowbao">
+
+<!-- start frame -->
+<div id="frame">
+<div id="frameTop">
+<div id="frameBottom">
+
+<!-- start header -->
+<div id="header">
+<a href="http://www.wowbao.com"><img id="logo"  src="http://wowbao.com/images/wowbao/logo.gif" alt="logo" /></a>
+<ul class="menu"><li id="current" class="active item1"><a href="index.html"><span>Home</span></a></li><li class="item2"><a href="menu.html"><span>Menu</span></a></li><li class="item6"><a href="locations.html"><span>Locations</span></a></li><li class="item38"><a href="press.html"><span>Press</span></a></li><li class="item5"><a href="catering.html"><span>Catering</span></a></li><li class="item40"><a href="http://www.snapfinger.com/menus/WOWBAOSHIPPING/default.aspx?SiteID=17761"><span>ship</span></a></li><li class="item4"><a href="ordering.html"><span>Online Ordering</span></a></li></ul><script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript"><!--
+var flashvars = {};
+var params = { wmode: "transparent" };
+var attributes = {};
+swfobject.embedSWF("swf/steam.swf", "steam", "950", "87", "9.0.0", "swf/expressInstall.swf", flashvars, params, attributes);
+// --></script>
+<div id="steam"></div>
+</div>
+<!-- end header -->
+
+<!-- start body -->
+<div id="body">
+
+<table class="contentpaneopen">
+
+
+
+<tr>
+<td valign="top">
+<table cellspacing="6" cellpadding="0" border="0" class="homeFrame">
+<tbody>
+<tr>
+<td width="652" valign="middle" height="357" align="center" rowspan="3">
+<div id="flash"></div>
+</td>
+<td width="293" valign="middle" height="115" align="center"><a href="https://mocapay.com/wowbao/home"><img width="292" height="114" src="http://wowbao.com/images/wowbao/home/callout1.png" alt="callout1" /></a></td>
+</tr>
+<tr>
+<td width="293" valign="middle" height="115" align="center"><a href="http://www.wowbao.com/mobile-app"><img alt="callout-1" height="115" width="293" src="http://wowbao.com/images/wowbao/home/callout-1.png" /></a><!--<a href="/baoeatingcontest" mce_href="/baoeatingcontest"><img src="/images/wowbao/home/callout4.png" mce_src="/images/wowbao/home/callout4.png" width="293" height="115" alt="callout-3" /></a>--></td>
+</tr>
+<tr>
+<td width="293" valign="middle" height="115" align="center">
+<div class="ahj-container ahj-51" style="width:292px;height:114px;">
+
+                                                      
+      <div class="ahj-item item-1">
+    <div class="ahj-wrap">
+      <div class="ahj-block">
+        <a href="ordering.html"><img src="http://wowbao.com/images/wowbao/home/rotating/callout-3.png" /></a>
+      </div>
+    </div>
+  </div>
+  
+</div> 
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+
+</div>
+<!-- end body -->
+
+</div>
+</div>
+</div>
+<!-- end frame -->
+
+<!-- start footer -->
+<a href="http://http://bithub.com/embed?hubId=1&tenant=radioactive_fern_9050&theme=light&view=public&image_only=true" id="wowbao-be-social">Wow Bao - Be Social</a><script src="http://wowbao.bithub.com/carousel/embed.js"></script>
+
+
+
+<div id="footer">
+<div id="footer-menu">
+<table width="100%" border="0" cellpadding="0" cellspacing="1"><tr><td nowrap="nowrap"><a href="index.html" class="mainlevelmenu" >home</a><span class="mainlevelmenu"> | </span><a href="get-your-wow-now.html" class="mainlevelmenu" >get your wow now</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/gift-cards" target="_blank" class="mainlevelmenu" >gift cards</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/employment" target="_blank" class="mainlevelmenu" >employment</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/" target="_blank" class="mainlevelmenu" >lettuce entertain you</a><span class="mainlevelmenu"> | </span><a href="http://www.wowbao.com/images/wowbao/menu/main/pdf/wowbaomenuprintable.pdf" target="_blank" class="mainlevelmenu" >printable menus</a><span class="mainlevelmenu"> | </span><a href="http://www.wowbao.com/images/wowbao/catering/cateringmenu.pdf" target="_blank" class="mainlevelmenu" >catering menus</a><span class="mainlevelmenu"> | </span><a href="franchising.html" class="mainlevelmenu" >franchising</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/contact" target="_blank" class="mainlevelmenu" >contact us</a><span class="mainlevelmenu"> | </span><a href="index.html#fishbowl" class="mainlevelmenu" >Join Our Email List</a></td></tr></table><div id="copyright">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="85%">
+<tbody>
+<tr>
+<td align="center" valign="middle"><a target="_blank" href="http://www.facebook.com/hotasianbuns"><img id="facebook" src="http://wowbao.com/images/wowbao/assets/facebook.png" alt="follow wow bao on facebook" /></a> <a target="_blank" href="http://twitter.com/baomouth"><img id="twitter" src="http://wowbao.com/images/wowbao/assets/twitter.png" alt="follow wow bao on twitter" /></a> <a target="_blank" href="http://instagram.com/wowbao"><img id="instagram" src="http://wowbao.com/images/wowbao/assets/instagram.png" alt="follow wow bao on instagram" /></a> <a target="_blank" href="http://youtube.com/wowbaovideo"><img id="youtube" src="http://wowbao.com/images/wowbao/assets/youtube.png" alt="follow wow bao on youtube" /></a></td>
+<td>Wow Bao all rights reserved • Copyright © 2013.  • • • • • •  <a target="_blank" href="http://www.envisionitmedia.com/services/interactive.html" title="website design">website design</a> by <a href="http://www.envisionitmedia.com/social-media" target="_blank"><img id="eim" class="png" src="http://wowbao.com/images/wowbao/assets/pixel.gif" alt="envisionit media" /></a> <a target="_blank" href="http://www.envisionitmedia.com" title="envisionit media">envisionit media</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- end footer -->
+
+</div>
+<!-- end wowbao -->
+
+<!-- start google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6126011-1");
+pageTracker._trackPageview();
+</script>
+<!-- end google analytics -->
+
+<div id="fishbowl"></div>
+<div id="fish_cont"></div>
+</body>
+</html>

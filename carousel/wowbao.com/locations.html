@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<head>
+  <base href="" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="asian in chicago, asian restaurants in chicago, casual restaurant, chicago asian restaurants, chicago wow bao, Chicago, IL 60601, Chicago, IL 60604, Chicago, IL 60610, lettuce entertain you, lettuce entertain you chicago, lettuce entertain you locations, lettuce entertain you restaurant locations, quick lunch, where is wow bao?, wow bao chicago, wow bao locations, wow bow, wowbao, bow wow" />
+  <meta name="title" content="locations" />
+  <meta name="description" content="Find directions, hours, and contact info for all Wow Bao restaurants. With three convenient locations in Chicago, Wow Bao is always nearby when your next craving kicks in." />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Wow Bao - locations</title>
+  <link href="http://wowbao.com/templates/default/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <script type="text/javascript" src="http://wowbao.com/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="http://wowbao.com/media/system/js/caption.js"></script>
+
+<link rel="stylesheet" href="http://wowbao.com/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/system/css/general.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/default/css/template.css" type="text/css" />
+<link rel="stylesheet" href="http://wowbao.com/templates/default/css/calendar.css" type="text/css" />
+<!--[if lte IE 6]>
+<link href="/templates/default/css/ieonly.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://www.wowbao.com/iframe/js/jquerycycle.js"></script>
+<script type="text/javascript" src="http://www.wowbao.com/iframe/js/jqueryeasing.js"></script>
+<script src="http://www.wowbao.com/iframe/js/jquery.tweet.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://www.leye.com/fishbowl/2/jquery.fishbowl.js"></script>
+<link rel="stylesheet" href="http://www.wowbao.com/iframe/tweet.css" type="text/css" />
+
+<script>
+$(document).ready(function() {
+	var url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=baomouth&count=20&callback=?";
+	$('.twitter_feed').html(''); //so important to include
+	
+	$.getJSON(url, function(data){
+		$.each(data, function(index, item){
+                   var hashInfo = item.entities.hashtags;
+                   var propName = '0'; /* having "0" represents the presence of hashtag info*/
+                   for(var propName in hashInfo) {
+                      if(hashInfo.hasOwnProperty(propName)) {
+                         if(hashInfo[propName].text=="BunsOnTheRun"){
+                            $('.twitter_feed').append('<div class="tweet"><p>' + item.text.linkify() + '</p><p><strong>' + relative_time(item.created_at) + '</strong></p></div>');  
+                         }
+                      }
+                   }
+	    });
+	});
+	
+	function relative_time(time_value) {
+	  var values = time_value.split(" ");
+	  time_value = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+	  var parsed_date = Date.parse(time_value);
+	  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+	  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
+	  delta = delta + (relative_to.getTimezoneOffset() * 60);
+	  
+	  var r = '';
+	  if (delta < 60) {
+		r = 'a minute ago';
+	  } else if(delta < 120) {
+		r = 'couple of minutes ago';
+	  } else if(delta < (45*60)) {
+		r = (parseInt(delta / 60)).toString() + ' minutes ago';
+	  } else if(delta < (90*60)) {
+		r = 'an hour ago';
+	  } else if(delta < (24*60*60)) {
+		r = '' + (parseInt(delta / 3600)).toString() + ' hours ago';
+	  } else if(delta < (48*60*60)) {
+		r = '1 day ago';
+	  } else {
+		r = (parseInt(delta / 86400)).toString() + ' days ago';
+	  }
+	  
+	  return r;
+	}
+	
+	String.prototype.linkify = function() {
+		return this.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&\?\/.=]+/, function(m) {
+			return m.link(m);
+		});
+	};	
+});
+
+
+
+$(document).ready(function() {
+      $(document.body).fishbowl({
+
+            mainbgpath: 'http://www.leye.com/fishbowl/images/bg-fishbowl01.png', //main bg -> 1px x 1px transparent png
+            formbgcss: '#e3dbd2;', //css rule for form background - no punctuation (":" & ";") required
+            labelcolor: '#4b3f0c', //color for feild labels
+            inputbgcss: '#ffffff', //css rule for input field background
+            inputcolor: '#4b3f0c', //off focus txt color
+            inputbgonfocus: '#ffffff', //input onfocus bg
+            inputcoloronfocus: '#000000', //input onfocus color
+            inputbgonfail: '#ff0000', //input onfail bg
+            inputcoloronfail: '#ffffff', //input onfail color
+            submitbg: '#4b3f0c', // submit bg color
+            submitcolor: '#ffffff', //submit txt color
+            submitbgonfocus: '#c41811', //submit onhover bg color
+            submitcoloronfocus: '#ffffff', //submit onhover txt color
+		    btncloseimg: 'http://www.leye.com/fishbowl/images/btn_close01.png', //a sprite -> 17px x 17px
+			
+			
+			SiteGUID: '7cf8befb-9c93-433b-9dda-f59d3cbc0e5f', //DO NOT CHANGE (unless your name is Luke or Joe)
+			ListID: '45097156690', //DO NOT CHANGE (unless your name is Luke or Joe)
+			StoreCode: '101', //DO NOT CHANGE (unless your name is Luke or Joe)
+			posturl: 'http://wowbao.fbmta.com/members/subscribe.aspx', //DO NOT CHANGE (unless your name is Luke or Joe)
+			
+			
+			multilocation: true,  //Set To "true" for multi-location concepts
+			locationoptions: '<li id="101">Jackson St.</li><li id="148">835 N Michigan Ave</li><li id="157">175 W Jackson</li><li id="178">225 N Michigan Ave</li>'  //list out location with ids ecaul to corrosponding store codes
+			 
+
+      });
+	  
+	  $('a[href=#fishbowl]').click(function() {
+			$('#fishbowl') .trigger('click');
+	  });
+});
+
+
+
+
+$(window).load(function() {
+	// Twitter Slider
+	$(function() {
+		$('.twitter_feed').cycle({
+			fx:     'scrollVert',
+			speed: 300,
+			delay:  500,
+			timeout: 8000
+		});
+	});
+});
+	
+</script>
+
+</head>
+<body>
+<a name="up" id="up"></a>
+
+
+
+<!-- start wowbao -->
+<div id="wowbao" class="wowbao ">
+
+<!-- start frame -->
+<div id="frame">
+<div id="frameTop">
+<div id="frameBottom">
+
+<!-- start header -->
+<div id="header">
+<a href="index.html"><img id="logo"  src="http://wowbao.com/images/wowbao/logo.gif" alt="logo" /></a>
+<ul class="menu"><li class="item1"><a href="index.html"><span>Home</span></a></li><li class="item2"><a href="menu.html"><span>Menu</span></a></li><li id="current" class="active item6"><a href="locations.html"><span>Locations</span></a></li><li class="item38"><a href="press.html"><span>Press</span></a></li><li class="item5"><a href="catering.html"><span>Catering</span></a></li><li class="item40"><a href="http://www.snapfinger.com/menus/WOWBAOSHIPPING/default.aspx?SiteID=17761"><span>ship</span></a></li><li class="item4"><a href="ordering.html"><span>Online Ordering</span></a></li></ul><script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript"><!--
+var flashvars = {};
+var params = { wmode: "transparent" };
+var attributes = {};
+swfobject.embedSWF("swf/steam.swf", "steam", "950", "87", "9.0.0", "swf/expressInstall.swf", flashvars, params, attributes);
+// --></script>
+<div id="steam"></div>
+</div>
+<!-- end header -->
+
+<!-- start body -->
+<div id="body">
+<div id="bodyTop">
+<div id="bodyBottom">
+
+<div id="title">
+<img height="340" alt="locations" src="http://wowbao.com/images/wowbao/titles/locations.gif" width="60" />
+</div>
+
+<div id="content">
+
+<table class="contentpaneopen">
+
+
+
+<tr>
+<td valign="top">
+<h1>6 Locations</h1>
+<table width="800" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:12px;">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>Bao-Mobile <span class="bullet">•••</span></h2>
+<p><strong>Our newest location has wheels!<br /> Follow <a target="_blank" href="https://twitter.com/#!/search?q=%23BunsOnTheRun">#bunsontherun</a> to learn where the food truck will be.</strong></p>
+</td>
+<td width="48" style="text-align: -webkit-left;"><br /><br /></td>
+<td width="384" valign="top" align="right">
+<div style="width: 100%; display: block;">
+<div id="twitter"><span style="text-align:center;">Recent Tweets from #bunsontherun:</span>
+<div class="tweet_cont">
+<div class="twitter_feed">
+<div class="tweet_nextprev"><!--
+<div class="tweet_previous"></div>
+<div class="tweet_next"></div>
+--></div>
+</div>
+</div>
+</div>
+</div>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<table width="800" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:12px;">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>Michigan Ave <span class="bullet">•••</span></h2>
+<p><strong>Corner of Lake and Michigan</strong><br />225 N. Michigan Ave.<br />Inside Main Entrance<br />Chicago, IL 60601 • 312.226.2299</p>
+<p>Mon - Fri 7am - 6pm</p>
+</td>
+<td width="48" style="text-align: -webkit-left;"><br /><br /></td>
+<td width="384" valign="top" align="right"><a href="http://maps.google.com/maps?f=l&amp;q=wow+bao&amp;near=225+N.+Michigan+Ave.,+Chicago,+IL+60601&amp;geocode=41.8862893,-87.623847&amp;ll=41.8862893,-87.623847&amp;ie=UTF8&amp;z=13&amp;iwloc=A" target="_blank"><img src="http://wowbao.com/images/wowbao/locations/michigan-plaza.png" /></a>
+<p><img src="http://wowbao.com/images/wowbao/assets/tri.gif" /> <a href="http://maps.google.com/maps?hl=en&amp;cp=18&amp;gs_id=1x&amp;xhr=t&amp;q=225+n+michigan+ave&amp;qe=MjI1IG4gbWljaGlnYW4gYXZl&amp;qesig=ZCi2UkIQWvMCSIswpvTkcQ&amp;pkc=AFgZ2tnmLy83QMwwjQ3TD0ghjerIAM0046Ciln6Eg1Mwkdk9pQCKIC5yTg_zySuyFN_yqPHT4DuDexRL39cqFjPYzml5N9NxMQ&amp;gs_sm=&amp;gs_upl=&amp;biw=1280&amp;bih=939&amp;bav=on.2,or.r_gc.r_pw.&amp;um=1&amp;ie=UTF-8&amp;sa=N&amp;tab=wl">CLICK HERE</a> driving directions  <img src="http://wowbao.com/images/wowbao/assets/tri.gif" /></p>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<table width="800" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:12px;">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>Theater District <span class="bullet">•••</span></h2>
+<p><strong>Corner of State and Lake</strong><br />1 West Wacker Blvd.<br />Chicago, IL 60601 • 312.658.0305</p>
+<p>Mon - Fri 8:00am - 9:00pm<br />Sat -  11:00am - 9:00pm<br />Sun - 12:00pm - 6:00pm</p>
+<p> </p>
+</td>
+<td width="48" style="text-align: -webkit-left;"><br /><br /></td>
+<td width="384" valign="top" align="right"><a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=1+West+Wacker+Blvd.+Chicago,+IL+60601&amp;sll=37.0625,-95.677068&amp;sspn=50.51141,79.277344&amp;ie=UTF8&amp;z=16&amp;g=1+West+Wacker+Blvd.+Chicago,+IL+60601&amp;iwloc=addr" target="_blank"><img src="http://wowbao.com/images/wowbao/locations/theaterDistrict.gif" /></a>
+<p><img src="http://wowbao.com/images/wowbao/assets/tri.gif" /> <a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=1+West+Wacker+Blvd.+Chicago,+IL+60601&amp;sll=37.0625,-95.677068&amp;sspn=50.51141,79.277344&amp;ie=UTF8&amp;z=16&amp;g=1+West+Wacker+Blvd.+Chicago,+IL+60601&amp;iwloc=addr" target="_blank">CLICK HERE</a> driving directions  <img src="http://wowbao.com/images/wowbao/assets/tri.gif" /></p>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<table width="800" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:12px;">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>Water tower place <span class="bullet">•••</span></h2>
+<p><strong>Inside main entrance of Water Tower Place</strong><br />835 North Michigan Ave.<br />Chicago, IL 60610 • 312.642.5888</p>
+<p>Mon-Sat: 10am - 9pm<br />Sun: 11am-6pm</p>
+<p> </p>
+<p> </p>
+</td>
+<td width="48"></td>
+<td width="384" valign="top" align="right"><a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=835+North+Michigan+Ave.+Chicago,+IL+60610&amp;sll=41.886791,-87.628104&amp;sspn=0.011693,0.019355&amp;g=835+North+Michigan+Ave.+Chicago,+IL+60610&amp;ie=UTF8&amp;ll=41.896847,-87.628047&amp;spn=0.011691,0.019355&amp;z=16&amp;iwloc=addr" target="_blank"><img src="http://wowbao.com/images/wowbao/locations/waterTowerPlace.gif" /></a>
+<p><img src="http://wowbao.com/images/wowbao/assets/tri.gif" /> <a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=835+North+Michigan+Ave.+Chicago,+IL+60610&amp;sll=41.886791,-87.628104&amp;sspn=0.011693,0.019355&amp;g=835+North+Michigan+Ave.+Chicago,+IL+60610&amp;ie=UTF8&amp;ll=41.896847,-87.628047&amp;spn=0.011691,0.019355&amp;z=16&amp;iwloc=addr" target="_blank">CLICK HERE</a> driving directions  <img src="http://wowbao.com/images/wowbao/assets/tri.gif" /></p>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<table width="800" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>Chicago loop <span class="bullet">•••</span></h2>
+<p><strong>Corner of Van Buren and Financial</strong><br />175 West Jackson Blvd.<br />Chicago, IL 60604 • 312.334.6395</p>
+<p>Mon - Fri 7:00am - 5:30pm<br />Sat - Sun CLOSED</p>
+<p> </p>
+</td>
+<td width="48" style="text-align: -webkit-left;"></td>
+<td width="384" valign="top" align="right"><a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=175+West+Jackson+Blvd.+Chicago,+IL+60604&amp;sll=41.896847,-87.628047&amp;sspn=0.011691,0.019355&amp;g=175+West+Jackson+Blvd.+Chicago,+IL+60604&amp;ie=UTF8&amp;z=16&amp;iwloc=addr" target="_blank"><img src="http://wowbao.com/images/wowbao/locations/chicagoLoop.gif" /></a>
+<p><img src="http://wowbao.com/images/wowbao/assets/tri.gif" /> <a href="http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=175+West+Jackson+Blvd.+Chicago,+IL+60604&amp;sll=41.896847,-87.628047&amp;sspn=0.011691,0.019355&amp;g=175+West+Jackson+Blvd.+Chicago,+IL+60604&amp;ie=UTF8&amp;z=16&amp;iwloc=addr" target="_blank">CLICK HERE</a> driving directions  <img src="http://wowbao.com/images/wowbao/assets/tri.gif" /></p>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<table width="800" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:12px;">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>LAKEVIEW <span class="bullet">•••</span></h2>
+<p><strong>Corner of Clark and Diversey</strong><br />2806 N. Clark St. <br />Chicago, IL 60657 • 773-433-5333</p>
+<p>Sun - Thu 11:00am - 9:00pm<br />Fri - Sat 11:00am - 10:00pm</p>
+<br /></td>
+<td width="48" style="text-align: -webkit-left;"><br /><br /></td>
+<td width="384" valign="top" align="right"><br />
+<p><img src="http://leyesecure.com/extras/wow-bao/images/2806-n-clark.jpg" /> <a target="_blank" href="https://www.google.com/maps/place/2806+N+Clark+St,+Chicago,+IL+60657/@41.9331472,-87.6451811,17z/data=!3m1!4b1!4m2!3m1!1s0x880fd309b47b7c11:0xfbe69296063ca54f">CLICK HERE</a> driving directions  <img src="http://wowbao.com/images/wowbao/assets/tri.gif" /></p>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<table width="800" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>U.S. CELLULAR FIELD<span class="bullet">•••</span></h2>
+<p><strong>Section 544</strong><br />333 West 35th Street<br />Chicago, IL 60616</p>
+<p>Open during all White Sox<br />home games.</p>
+</td>
+<td width="48" style="text-align: -webkit-left;"><strong></strong></td>
+<td width="384" valign="top" align="right"><img width="384" height="168" src="http://wowbao.com/images/wowbao/locations/image-1.png" alt="image-1" />
+<p><img src="http://wowbao.com/images/wowbao/assets/tri.gif" /> <a href="http://maps.google.com/maps?hl=en&amp;safe=off&amp;client=firefox-a&amp;hs=iP8&amp;rls=org.mozilla:en-US:official&amp;q=us+cellular+field+map&amp;gs_sm=e&amp;gs_upl=24635l25095l0l25352l4l4l0l0l0l0l665l665l5-1l1l0&amp;bav=on.2,or.r_gc.r_pw.&amp;biw=1588&amp;bih=942&amp;um=1&amp;ie=UTF-8&amp;sa=N&amp;tab=wl" target="_blank">CLICK HERE</a> driving directions  <img src="http://wowbao.com/images/wowbao/assets/tri.gif" /></p>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<table width="800" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>Chicago O'Hare International Airport<span class="bullet">•••</span></h2>
+<p><strong>Terminal 5, Concourse M, Gate M11</strong><br /> 10000 West O'Hare Ave<br /> Chicago, IL 60666</p>
+<p>Open every day 10am - 10pm</p>
+</td>
+<td width="48" style="text-align: -webkit-left;"><strong></strong></td>
+<td width="384" valign="top" align="right"><img width="384" height="168" src="http://wowbao.com/images/wowbao/locations/wow-bao-location-map_t5.png" alt="t5" />
+<p><img src="http://wowbao.com/images/wowbao/assets/tri.gif" /> <a href="https://goo.gl/maps/oBieV">CLICK HERE</a> driving directions  <img src="http://wowbao.com/images/wowbao/assets/tri.gif" /></p>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<table width="800" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td width="48"></td>
+<td width="296" valign="top" align="left">
+<h2>Oriole Park at Camden Yards<span class="bullet">•••</span></h2>
+<p><strong>Tako Kiosk, Sections 52-55</strong><br />333 West Camden Street<br />Baltimore, MD 21201</p>
+<p>Open during all Oriole<br />home games.</p>
+</td>
+<td width="48" style="text-align: -webkit-left;"><strong></strong></td>
+<td width="384" valign="top" align="right"><img width="384" height="168" src="http://wowbao.com/images/wowbao/locations/camden.png" alt="camden" />
+<p><img src="http://wowbao.com/images/wowbao/assets/tri.gif" /> <a href="https://maps.google.com/maps?hl=en&amp;client=safari&amp;ie=UTF-8&amp;q=the+orioles+stadium+camden+address&amp;fb=1&amp;gl=us&amp;hq=the+orioles+stadium+camden&amp;cid=0,0,2605571249100277049&amp;ei=tY1kUaeCM-my0QGJ34CYBw&amp;ved=0CKwBEPwSMAQ">CLICK HERE</a> driving directions  <img src="http://wowbao.com/images/wowbao/assets/tri.gif" /></p>
+</td>
+<td width="24"></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 30px; line-height: 36px;"><strong>Places to Purchase Frozen Bao</strong></span></p>
+<h4>
+<div style="color: #222222; font-family: arial, sans-serif; font-size: 13px; line-height: normal;">
+<h2 style="color: #4b1e0c; text-align: -webkit-left;">Chicago Locations<span class="bullet">•••</span></h2>
+</div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span style="font-size: 10pt; font-family: arial, helvetica, sans-serif;">Jewel 424 W. Division Street</span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 370 N. Desplaines (Kinzie &amp; Des Plaines)</span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 1210 N. Clark Street (Clark &amp; Division)</span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 3630 N. Southport Ave (Addison &amp; Southport)</span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 2940 N. Ashland (Ashland &amp; Wellington)</span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 3531 N. Broadway</span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 3400 N. Western Ave.<br /></span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 1341 N. Paulina</span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 4660 W. Irving Park</span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 550 N. State St</span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Jewel 4250 N. Lincoln Ave<br />Jewel 1224 S. Wabash<br />Jewel 4042 W. Foster Ave<br />Jewel 2550 N. Clybourn </span></span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">East Bank Club  500 North Kingsbury St</span></span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span style="font-size: 10pt; color: #000000;"><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;"></span>Plum Market 1233 N. Wells S<br />Big Apple 2345 N Clark St<br />Marketplace 521 W Diversey Pkwy</span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span><span style="font-size: 10pt; color: #000000;">Mariano's 1800 W Lawrence<br />Treasure Island 3460 N. Broadway<br />Treasure Island 2121 N. Clybourn Ave. <br /></span></span><span style="color: #000000; font-size: 10pt;">Treasure Island 680 N. Lake Shore Dr.</span></div>
+<span style="font-family: arial, sans-serif; color: #000000; font-size: 10pt;"><span style="line-height: normal;">Treasure Island 1639 N. Wells Street</span></span>
+<div><span style="font-family: arial, sans-serif; color: #000000; font-size: 10pt;"><span style="line-height: normal;">Treasure Island 1526 E. 55th Street</span></span></div>
+<div><span style="font-family: arial, sans-serif; color: #000000; font-size: 10pt;"><span style="line-height: normal;">Treasure Island 75 W. Elm Street</span></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span style="font-size: 14px; line-height: 18px; text-transform: uppercase; font-family: verdana; color: #4b1e0c;">Suburban Locations</span><span class="bullet" style="text-transform: uppercase;">•••</span></div>
+</h4>
+<h4>D &amp; D Finer Foods - Evanston (825 Noyes St.)<br /><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt;">Grand Food Center - Glencoe (341 Hazel Ave)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt;">Grand Food Center - Winnetka (606 Green Bay Rd.)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt;">Grand Food Center - Winnetka (606 Green Bay Rd.)<br />Jewel - Glenview (1340 Patriot Blvd.)<br />Jewel - Glenview (2775 Pfingsten)<br />Jewel - Gurnee (6509 W. Grand Ave.)<br />Jewel - Highland Park (1600 Deerfield Rd.)<br />Jewel - Wilmette (411 N. Green Bay Rd.)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt;">Lakeside Foods - Winnetka (800 Elm Street)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt;">LemonTree Grocer Downer's Grove (</span><span style="line-height: 16px;">5101 Mochel Dr)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Mariano's - Glenview (25 Waukegan Rd)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Standard Market - Naperville (1508 Aurora Ave)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Standard Market - Westmont (333 E Ogden Ave)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Sunset Foods Highland Park (1812 Greenbay Rd.)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Sunset Foods Northbrook (1127 Church Street)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Sunset Foods Libertyville (1451 Peterson Rd.)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Sunset Foods Lake Forest (825 S Waukegan Rd.)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Sunset Foods Long Grove (corner of Rt 83 &amp; Aptakisic)<br /></span><span style="font-family: arial, helvetica, sans-serif; font-size: 10pt; line-height: 16px;">Treasure Island -  Wilmette (911 Ridge Rd)</span></h4>
+<strong><span style="font-size: 14px; line-height: 18px; text-transform: uppercase; font-family: verdana; color: #4b1e0c;">Michigan Locations</span><span class="bullet" style="text-transform: uppercase;">•••</span></strong>
+<h4><strong><span style="font-size: 10pt; font-family: arial, helvetica, sans-serif;">Plum Market Ann Arbor (Maple Village Plaza: 375 North Maple Road)<br />Plum Market Bloomfield (Bloomfield Commons Plaza: 3675 West Maple Road)<br />Plum Market West Bloomfield (Old Orchard Plaza: 6565 Orchard Lake Rd)</span></strong></h4>
+<p> </p>
+<p><span style="line-height: normal; font-size: 10pt; font-family: __; color: #000000;"><span style="font-family: arial,helvetica,sans-serif;"> </span></span></p>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"><span style="font-size: 10pt;"><br /></span></div>
+<div style="color: #222222; font-family: arial, sans-serif; line-height: normal;"></div></td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+
+</div>
+
+
+
+<!-- <div class="clr"></div> -->
+</div>
+</div>
+</div>
+<!-- end body -->
+
+</div>
+</div>
+</div>
+<!-- end frame -->
+
+<!-- start footer -->
+<div id="footer">
+<table width="100%" border="0" cellpadding="0" cellspacing="1"><tr><td nowrap="nowrap"><a href="index.html" class="mainlevelmenu" >home</a><span class="mainlevelmenu"> | </span><a href="get-your-wow-now.html" class="mainlevelmenu" >get your wow now</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/gift-cards" target="_blank" class="mainlevelmenu" >gift cards</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/employment" target="_blank" class="mainlevelmenu" >employment</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/" target="_blank" class="mainlevelmenu" >lettuce entertain you</a><span class="mainlevelmenu"> | </span><a href="http://www.wowbao.com/images/wowbao/menu/main/pdf/wowbaomenuprintable.pdf" target="_blank" class="mainlevelmenu" >printable menus</a><span class="mainlevelmenu"> | </span><a href="http://www.wowbao.com/images/wowbao/catering/cateringmenu.pdf" target="_blank" class="mainlevelmenu" >catering menus</a><span class="mainlevelmenu"> | </span><a href="franchising.html" class="mainlevelmenu" >franchising</a><span class="mainlevelmenu"> | </span><a href="http://www.leye.com/contact" target="_blank" class="mainlevelmenu" >contact us</a><span class="mainlevelmenu"> | </span><a href="locations.html#fishbowl" class="mainlevelmenu" >Join Our Email List</a></td></tr></table><div id="copyright">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="85%">
+<tbody>
+<tr>
+<td align="center" valign="middle"><a target="_blank" href="http://www.facebook.com/hotasianbuns"><img id="facebook" src="http://wowbao.com/images/wowbao/assets/facebook.png" alt="follow wow bao on facebook" /></a> <a target="_blank" href="http://twitter.com/baomouth"><img id="twitter" src="http://wowbao.com/images/wowbao/assets/twitter.png" alt="follow wow bao on twitter" /></a> <a target="_blank" href="http://instagram.com/wowbao"><img id="instagram" src="http://wowbao.com/images/wowbao/assets/instagram.png" alt="follow wow bao on instagram" /></a> <a target="_blank" href="http://youtube.com/wowbaovideo"><img id="youtube" src="http://wowbao.com/images/wowbao/assets/youtube.png" alt="follow wow bao on youtube" /></a></td>
+<td>Wow Bao all rights reserved • Copyright © 2013.  • • • • • •  <a target="_blank" href="http://www.envisionitmedia.com/services/interactive.html" title="website design">website design</a> by <a href="http://www.envisionitmedia.com/social-media" target="_blank"><img id="eim" class="png" src="http://wowbao.com/images/wowbao/assets/pixel.gif" alt="envisionit media" /></a> <a target="_blank" href="http://www.envisionitmedia.com" title="envisionit media">envisionit media</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- end footer -->
+
+</div>
+<!-- end wowbao -->
+
+<!-- start google analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-6126011-1");
+pageTracker._trackPageview();
+</script>
+<!-- end google analytics -->
+
+<div id="fishbowl"></div>
+<div id="fish_cont"></div>
+</body>
+</html>
