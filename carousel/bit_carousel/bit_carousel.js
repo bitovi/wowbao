@@ -146,7 +146,7 @@ can.Component.extend({
 		'a click' : function(el, ev){
 			ev.preventDefault();
 			window.open(el.attr('href'));
-			this.element.trigger('interaction:link', [this.scope.attr('state.hubId'), this.scope.attr('bit.id')]);
+			this.element.trigger('interaction:carousel-link', [this.scope.attr('state.hubId'), this.scope.attr('bit.id')]);
 		},
 		// Go through all images and make sure all are loaded or errored
 		// Before calling the `doneLoading` function which will remove the loading class

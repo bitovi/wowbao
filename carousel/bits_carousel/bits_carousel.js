@@ -74,7 +74,8 @@ export default can.Component.extend({
 			}
 			return width;
 		},
-		carouselNext : function(){
+		carouselNext : function(ctx, el){
+			el.trigger('interaction:carousel-scroll', [this.attr('state.hubId')]);
 			if(this.attr('isLoading')){
 				return;
 			}
