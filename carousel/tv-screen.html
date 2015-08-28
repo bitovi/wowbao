@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>WowBao TV</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
+    <script>
+      var myFirebaseRef = new Firebase("https://wowbao.firebaseio.com/");
+      myFirebaseRef.on('child_changed', function(childSnapshot){
+        window.location.reload();
+      });
+    </script>
+    <script src="./node_modules/steal/steal.js" main="tv-screen"></script>
+  </body>
+</html>
+

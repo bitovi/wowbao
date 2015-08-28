@@ -1,0 +1,130 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+                 box-sizing: inherit;
+             }
+
+body {
+    margin: 0;
+    background: url("../images/tv-background.png");
+    width: 1080px;
+    height: 1920px;
+    position: relative;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    //overflow: hidden;
+}
+html {
+    
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+
+
+#app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: -webkit-linear-gradient(rgba(0,0,0,0), #741a1e);
+    overflow: hidden;
+}
+
+wb-tv {
+    display: block;
+    .header-wrap {
+        text-align: center;
+        padding-top: 75px;
+    }
+    .bit-wrap {
+        width: 760px;
+        border: 5px solid #ec4c2e;
+        border-radius: 20px;
+        background: #ec4c2e;
+        overflow: hidden;
+        left: 50%;
+        margin-left: -380px;
+        position: absolute;
+        top: 310px;
+
+        .image-wrap {
+            height: 760px;
+            background-position: 50% 50%;
+            background-size: cover;
+        }
+        .bit-avatar {
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            background-position: 50% 50%;
+            border-radius: 100%;
+            border: 5px solid #ec4c2e;
+            margin: -50px auto 0;
+            background-color: white;
+        }
+        .title {
+            color: white;
+            padding: 25px 50px 0px;
+            margin-bottom: 50px;
+            font-size: 40px;
+            max-height: 320px;
+            overflow-y: hidden;
+            a {
+                color: white;
+            }
+        }
+        .author-date-feed-wrap {
+            padding: 0 50px;
+            margin-bottom: 50px;
+            height: 50px;
+            img {
+                width: 50px;
+                height: 50px;
+                margin: 0;
+                display: block;
+                float: left;
+            }
+            .author-date-wrap {
+                height: 
+                float: left;
+                border-left: 3px solid #c5352a;
+                padding: 10px 0 10px 25px;
+                height: 50px;
+                margin: -10px 0 -10px 75px;
+                color: white;
+                font-size: 20px;
+                line-height: 1.4;
+                .date {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .bit-wrap-1 {
+        left: 150%;
+    }
+    .footer {
+        height: 75px;
+        background: #0f0105;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        img {
+            display: block;
+            width: 76px;
+            margin: -38px auto 0;
+        }
+    }
+}

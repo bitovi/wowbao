@@ -1,0 +1,31 @@
+<div class="header-wrap">
+  <img src="images/wow-bao-bithub-display-05.svg">
+</div>
+{{#each visibleBits}}
+  
+  <div class="bit-wrap bit-wrap-{{@index}}">
+    {{#if images.length}}
+      <div class="image-wrap" style="background-image: url({{images.0.url}})"></div>
+    {{/if}}
+    {{#author.avatar_url}}
+			<div class="bit-avatar" style="background-image: url({{.}})"></div>
+		{{/author.avatar_url}}
+    <div class="title">
+      {{{ formattedTitle title }}}
+      <br>
+      {{{ body }}}
+    </div>
+    <div class="author-date-feed-wrap cf">
+      <img src="images/social-white/{{feed_name}}.png"/>
+      <div class="author-date-wrap">
+        {{author.id}}
+        <div class="date">
+          {{formattedThreadUpdatedAt}}
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+<div class="footer">
+  <img src="images/wowbao-footer-logo.png">
+</div>
