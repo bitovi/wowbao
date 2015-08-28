@@ -26,7 +26,7 @@ export default can.Component.extend({
 			RealBit.findAll({}, function(data){
 				self.attr('bits', new RealBit.List(data));
 				self.attr('visibleBits', [self.attr('bits.0')]);
-				//self.nextSlide();
+				self.nextSlide();
 			});
 		},
 		state : {
