@@ -18,7 +18,7 @@
     <div class="author-date-feed-wrap cf">
       <img src="images/social-white/{{feed_name}}.png"/>
       <div class="author-date-wrap">
-        {{author.id}}
+        <b>{{author.id}}</b>
         <div class="date">
           {{formattedThreadUpdatedAt}}
         </div>
