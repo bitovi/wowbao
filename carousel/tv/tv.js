@@ -3,7 +3,6 @@ import $ from "jquery";
 import initView from "./tv.stache!";
 import BitModel from "models/bit";
 
-import fixtures from "fixtures/fixture_data.json";
 
 import "./tv.less!";
 import "bit/";
@@ -23,9 +22,12 @@ export default can.Component.extend({
 	scope : {
 		nextBitIndex: 1,
 		init : function(){
-			this.attr('bits', new BitModel.List(fixtures.data));
-			this.attr('visibleBits', [this.attr('bits.0')]);
-			this.nextSlide();
+			var self = this;
+			RealBit.findAll({}, function(data){
+				self.attr('bits', new RealBit.List(data));
+				self.attr('visibleBits', [self.attr('bits.0')]);
+				self.nextSlide();
+			});
 		},
 		state : {
 			isAdmin: function(){ return false}
