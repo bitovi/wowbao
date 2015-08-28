@@ -11,6 +11,21 @@
       myFirebaseRef.on('child_changed', function(childSnapshot){
         window.location.reload();
       });
+      
+      var reloadAtMidnight = function(){
+        var minsToMidnight = function() {
+          var msd = 8.64e7;
+          var now = new Date();
+          return (msd - (now - now.getTimezoneOffset()*6e4) % msd)/6e4;
+        }
+        setTimeout(function(){
+          window.location.reload();
+          setTimeout(reloadAtMidnight, 10 * 60 * 1000);
+          }, (minsToMidnight() * 60 * 1000));
+      };
+
+      reloadAtMidnight();
+      
     </script>
     <script src="./node_modules/steal/steal.js" main="tv-screen" env="production"></script>
   </body>
