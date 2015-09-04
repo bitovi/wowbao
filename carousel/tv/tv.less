@@ -9,14 +9,16 @@ html {
 body {
     margin: 0;
     background: url("../images/tv-background.png");
-    width: 1080px;
-    height: 1920px;
-    position: relative;
     font-family: "Helvetica Neue", Arial, sans-serif;
+        //overflow: hidden;
+}
+body.rotated {
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    //overflow: hidden;
+
 }
+
+
 html {
     
 }
@@ -41,58 +43,67 @@ html {
     bottom: 0;
     background: -webkit-linear-gradient(rgba(0,0,0,0), #741a1e);
     overflow: hidden;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    height: 1280px;
+    width: 720px;
+    margin-left: 280px;
+    margin-top: -279px;
 }
 
 wb-tv {
     display: block;
     .header-wrap {
         text-align: center;
-        padding-top: 75px;
+        padding-top: 50px;
+        img {
+            width: 463px;
+        }
     }
     .bit-wrap {
-        width: 760px;
+        width: 506px;
         border: 5px solid #ec4c2e;
         border-radius: 20px;
         background: #ec4c2e;
         overflow: hidden;
         left: 50%;
-        margin-left: -380px;
+        margin-left: -253px;
         position: absolute;
-        top: 310px;
+        top: 207px;
 
         .image-wrap {
-            height: 760px;
+            height: 506px;
             background-position: 50% 50%;
             background-size: cover;
         }
         .bit-avatar {
-            width: 100px;
-            height: 100px;
+            width: 66px;
+            height: 66px;
             background-size: cover;
             background-position: 50% 50%;
             border-radius: 100%;
             border: 5px solid #ec4c2e;
-            margin: -50px auto 0;
+            margin: -33px auto 0;
             background-color: white;
         }
         .title {
             color: white;
-            padding: 25px 50px 0px;
-            margin-bottom: 50px;
-            font-size: 40px;
-            max-height: 320px;
+            padding: 17px 34px 0px;
+            margin-bottom: 34px;
+            font-size: 27px;
+            max-height: 215px;
             overflow-y: hidden;
             a {
                 color: white;
             }
         }
         .author-date-feed-wrap {
-            padding: 0 50px;
-            margin-bottom: 50px;
-            height: 50px;
+            padding: 0 34px;
+            margin-bottom: 34px;
+            height: 34px;
             img {
-                width: 50px;
-                height: 50px;
+                width: 34px;
+                height: 34px;
                 margin: 0;
                 display: block;
                 float: left;
@@ -101,14 +112,14 @@ wb-tv {
                 height: 
                 float: left;
                 border-left: 3px solid #c5352a;
-                padding: 10px 0 10px 25px;
-                height: 70px;
-                margin: -10px 0 -10px 75px;
+                padding: 7px 0 7px 16px;
+                height: 47px;
+                margin: -7px 0 -7px 50px;
                 color: white;
-                font-size: 20px;
+                font-size: 14px;
                 line-height: 1.4;
                 .date {
-                    font-size: 14px;
+                    font-size: 10px;
                 }
             }
         }
@@ -117,7 +128,7 @@ wb-tv {
         left: 150%;
     }
     .footer {
-        height: 75px;
+        height: 50px;
         background: #0f0105;
         position: absolute;
         bottom: 0;
@@ -125,8 +136,9 @@ wb-tv {
         right: 0;
         img {
             display: block;
-            width: 76px;
-            margin: -38px auto 0;
+            width: 50px;
+            margin: -25px auto 0;
         }
     }
 }
+
