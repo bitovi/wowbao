@@ -48,9 +48,6 @@ export default can.Component.extend({
 		shouldRender: true,
 	},
 	events : {
-		inserted : function(){
-			$(window).scrollTop(1);
-		},
 		"{scope.visibleBits} length" : function(visibleBits, ev, length){
 			var self = this;
 			var cards, leftCard, rightCard;
