@@ -1,3 +1,7 @@
+// variables
+@rich-black: #0f0105;
+@bao-red: #c5352a;
+
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
     box-sizing: border-box;
@@ -8,7 +12,7 @@ html {
 
 body {
     margin: 0;
-    background: url("../images/tv-background.png");
+    background: @rich-black;
     font-family: "Helvetica Neue", Arial, sans-serif;
         //overflow: hidden;
 }
@@ -41,35 +45,34 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: -webkit-linear-gradient(rgba(0,0,0,0), #741a1e);
     overflow: hidden;
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+    // -webkit-transform: rotate(-90deg);
+    // transform: rotate(-90deg);
     height: 1280px;
     width: 720px;
-    margin-left: 280px;
-    margin-top: -279px;
+    // margin-left: 280px;
+    // margin-top: -279px;
 }
 
 wb-tv {
     display: block;
     .header-wrap {
         text-align: center;
-        padding-top: 50px;
+        padding-top: 10px;
         img {
-            width: 463px;
+            width: 550px;
         }
     }
     .bit-wrap {
-        width: 506px;
-        border: 5px solid #ec4c2e;
+        width: 670px;
+        border: 5px solid @bao-red;
         border-radius: 20px;
-        background: #ec4c2e;
+        background: @bao-red;
         overflow: hidden;
         left: 50%;
-        margin-left: -253px;
+        margin-left: -335px;
         position: absolute;
-        top: 207px;
+        top: 175px;
         -webkit-transform: translateZ(0);
         -moz-transform: translateZ(0);
         -ms-transform: translateZ(0);
@@ -77,54 +80,55 @@ wb-tv {
         transform: translateZ(0);
 
         .image-wrap {
-            height: 506px;
+            height: 650px;
             background-position: 50% 50%;
             background-size: cover;
         }
         .bit-avatar {
-            width: 66px;
-            height: 66px;
+            width: 200px;
+            height: 200px;
             background-size: cover;
             background-position: 50% 50%;
             border-radius: 100%;
-            border: 5px solid #ec4c2e;
-            margin: -33px auto 0;
+            border: 5px solid @rich-black;
+            margin: -190px 0 0;
             background-color: white;
+            z-index: 999px;
+            display: block;
         }
         .title {
             color: white;
-            padding: 17px 34px 0px;
+            padding: 27px 44px 10px;
             margin-bottom: 34px;
-            font-size: 27px;
-            max-height: 215px;
+            font-size: 26px;
+            max-height: 160px;
             overflow-y: hidden;
             a {
                 color: white;
             }
         }
+        .avatar-section {
+            background: @rich-black;
+            height: 100px;
+        }
         .author-date-feed-wrap {
-            padding: 0 34px;
-            margin-bottom: 34px;
-            height: 34px;
+            float: left;
+            margin: 18px 0 0 215px;
+            width: 415px;
             img {
-                width: 34px;
-                height: 34px;
-                margin: 0;
-                display: block;
-                float: left;
+                width: 36px;
+                height: 36px;
+                margin-top: 13px;
+                float: right;
             }
             .author-date-wrap {
-                height: 
                 float: left;
-                border-left: 3px solid #c5352a;
-                padding: 7px 0 7px 16px;
-                height: 47px;
-                margin: -7px 0 -7px 50px;
                 color: white;
-                font-size: 14px;
-                line-height: 1.4;
+                font-size: 30px;
+                line-height: 1.25;
                 .date {
-                    font-size: 10px;
+                    font-size: 18px;
+                    color: @bao-red;
                 }
             }
         }
@@ -133,16 +137,21 @@ wb-tv {
         left: 150%;
     }
     .footer {
-        height: 50px;
-        background: #0f0105;
+        height: 115px;
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
         img {
             display: block;
-            width: 50px;
-            margin: -25px auto 0;
+            width: 115px;
+            height: auto;
+            float: right;
+            &.powered {
+                float: left;
+                width: 169px;
+                margin-top: -20px;
+            }
         }
     }
 }

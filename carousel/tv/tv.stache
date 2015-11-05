@@ -1,5 +1,5 @@
 <div class="header-wrap">
-  <img src="images/wow-bao-bithub-display-05.svg">
+  <img src="images/connect-with-us-header-11.svg">
 </div>
 {{#each visibleBits}}
   
@@ -8,24 +8,30 @@
       <div class="image-wrap" style="background-image: url({{images.0.url}})"></div>
     {{/if}}
     {{#author.avatar_url}}
-			<div class="bit-avatar" style="background-image: url({{.}})"></div>
+
+        <section class="avatar-section">
+          <div class="author-date-feed-wrap cf">
+              <div class="author-date-wrap">
+                <b>{{author.id}}</b>
+                <div class="date">
+                  {{formattedThreadUpdatedAt}}
+                </div>
+              </div>
+              <img src="images/social-white/{{feed_name}}.png"/>
+        </div>
+    </section>
+              <div class="bit-avatar" style="background-image: url({{.}})"></div>
 		{{/author.avatar_url}}
     <div class="title">
       {{{ formattedTitle title }}}
       <br>
       {{{ body }}}
     </div>
-    <div class="author-date-feed-wrap cf">
-      <img src="images/social-white/{{feed_name}}.png"/>
-      <div class="author-date-wrap">
-        <b>{{author.id}}</b>
-        <div class="date">
-          {{formattedThreadUpdatedAt}}
-        </div>
-      </div>
-    </div>
+
   </div>
 {{/each}}
 <div class="footer">
-  <img src="images/wowbao-footer-logo.png">
+  <img src="images/qr-code-12.svg">
+    <img src="images/get-wowd.svg">
+    <img  class="powered" src="images/powered-by-14.svg">
 </div>
