@@ -16,9 +16,9 @@ iframe.style.marginTop = '50px';
 iframe.style.marginBottom = '50px';
 iframe.style.border = 'none';
 iframe.style.display = 'block';
-//iframe.src = "http://wowbao.bithub.com/carousel/embed.html";
+iframe.src = "http://wowbao.bithub.com/carousel/embed.html";
 
-iframe.src = "../embed.html";
+//iframe.src = "../embed.html";
 
 wrapper.appendChild(iframe);
 
