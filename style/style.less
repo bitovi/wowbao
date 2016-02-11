@@ -25,76 +25,12 @@
     *zoom: 1;
 }
 
-#body {
+/**
+ * Manually adjust social icons in header
+ */
+.navbar-small nav ul li.nav-social a {
+    margin-top: 12px;
 }
-#social-icons {
-    text-align: center;
-    margin-top: 80px;
-    svg {
-        path {
-            fill: #e28c88;
-        }
-    }
-    a:hover svg path {
-        fill: white;
-    }
-}
-
-#social-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: white;
-    text-transform: uppercase;
-    font-size: 32px;
-    text-align: center;
-    margin: 30px 0;
-    
-    hr {
-        border: none;
-        border-top: 1px solid #ba1512;
-    }
-    span {
-        display: inline-block;
-        padding: 0 20px;
-        background: #9b120d;
-        position: relative;
-        top: -25px;
-    }
-}
-
-ul.tabs {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    li {
-        margin: 0;
-        padding: 0;
-        float: left;
-        width: 25%;
-        text-align: center;
-        font-size: 20px;
-        font-family: 'Montserrat', sans-serif;
-        a {
-            color: #e28c88;
-            &:hover {
-                color: white;
-                text-decoration: none;
-                svg path, svg circle {
-                    fill: white;
-                }
-            }
-        }
-    }
-    svg {
-        width: 65%;
-        display: block;
-        margin: 0 auto -35px;
-        path, circle {
-            fill: #e28c88;
-        }
-    }
-}
-
 .embed-outer-wrap {
     background: #f3d1cf;
     -webkit-border-radius: 10px;
@@ -111,9 +47,9 @@ ul.tabs {
     right: 0;
 }
 .hub-wrap {
-    background: #f3d1cf;
+    background: #b02027;
     position: absolute;
-    top: 250px;
+    top: 120px;
     bottom: 0;
     left: 0;
     right: 0;
