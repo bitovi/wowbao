@@ -1,18 +1,18 @@
 # wowbao
 
-1. clone this repository:
+Clone this repository:
 ```
 git clone git@github.com:bitovi/wowbao.git
 ```
 
-2. cd into repository and do:
+`cd` into repository and do:
 ```
 npm install
 ```
 
-3. Make changes to files as needed
-4. Once changes are complete run:
+Make changes to files as needed
+Once changes are complete run:
 ```
-npm run buld
+npm run build
 ```
 
