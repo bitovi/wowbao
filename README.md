@@ -2,7 +2,7 @@
 
 1. clone this repository:
 ```
-git@github.com:bitovi/wowbao.git
+git clone git@github.com:bitovi/wowbao.git
 ```
 
 2. cd into repository and do:
